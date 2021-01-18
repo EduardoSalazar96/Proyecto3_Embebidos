@@ -48,7 +48,10 @@ def enviar_alerta():
 
 #Funcion boton 3
 def ver_registro():
+	extraer_archivo = 'scp Bendicion@192.168.18:register.txt Registro.txt'
+	os.system(extraer_archivo)
 	file = os.path.isfile('register.txt')
+	
 	if file:
 		print("Ver registro")
 		archivo = "gedit"
