@@ -28,6 +28,30 @@ imagen1.pack(padx= 150, pady= 150)
 global abrir_camara
 abrir_camara = '1'
 
+#Funcion 0
+def log_in():
+	window2 = Tk()
+	window2.geometry('300x300')
+	usuario = Label(window2, text = "Digite el nombre de usuario", font=("Arial Bold", 12), bg='white')
+	usuario.place(relx = 0.5, rely = 0.1, anchor = 'center') #posicion de Etiqueta
+	Usuario = Entry(window2)
+	Usuario.place(relx = 0.5, rely = 0.2, anchor = 'center')
+	ip = Label(window2, text = "Digite la dirección IP", font=("Arial Bold", 12), bg='white')
+	ip.place(relx = 0.5, rely = 0.3, anchor = 'center') #posicion de Etiqueta
+	IP = Entry(window2)
+	IP.place(relx = 0.5, rely = 0.4, anchor = 'center')
+	contrasena = Label(window2, text = "Digite la contraseña", font=("Arial Bold", 12), bg='white')
+	contrasena.place(relx = 0.5, rely = 0.5, anchor = 'center')
+	Contrasena = Entry(window2)
+	Contrasena.place(relx = 0.5, rely = 0.6, anchor = 'center')
+	def loggearse():
+		cmd = "sshpass -p " + Contrasena.get()  + " ssh " + Usuario.get()+"@"+IP.get()
+		print(cmd) 
+		os.system()
+		window2.destroy()
+	boton = Button(window2, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=lambda: loggearse())
+	boton.place(relx = 0.5, rely = 0.8, anchor = 'center')
+
 #Funcion boton 1
 def iniciar_deteccion():
 	print("Iniciar detección")
@@ -74,6 +98,10 @@ def salir():
 	exit()
 
 window.protocol("WM_DELETE_WINDOW", salir)
+
+#Boton 0 
+btn0 = Button(window, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=log_in)
+btn0.place(x=380, y=130)
 
 #Definir botones
 #Botón 1
