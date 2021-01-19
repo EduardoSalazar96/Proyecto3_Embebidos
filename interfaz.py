@@ -47,7 +47,7 @@ def log_in():
 	def loggearse():
 		cmd = "sshpass -p " + Contrasena.get()  + " ssh " + Usuario.get()+"@"+IP.get()
 		print(cmd) 
-		os.system()
+		os.system(cmd)
 		window2.destroy()
 	boton = Button(window2, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=lambda: loggearse())
 	boton.place(relx = 0.5, rely = 0.8, anchor = 'center')
