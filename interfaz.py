@@ -13,15 +13,15 @@ window.resizable(0,0)
 window.configure(bg='white')
 
 #Imagen en ventana
-path_imagen = 'distancia.png'
-img = PhotoImage(file = path_imagen)
+#path_imagen = 'distancia.png'
+#img = PhotoImage(file = path_imagen)
 
 #Etiqueta de ventana
 lbl = Label(window, text="Sistema de detección de cumplimiento del distanciamiento social", font=("Arial Bold", 18), bg='white') #etiqueta
 lbl.pack() #posicion de etiqueta
 
-imagen1 = Label(window, image=img, bg='white')
-imagen1.pack(padx= 150, pady= 150)
+#imagen1 = Label(window, image=img, bg='white')
+#imagen1.pack(padx= 150, pady= 150)
 
 #Botones
 #Definir funciones back.end
@@ -48,8 +48,10 @@ def log_in():
 		cmd = "sshpass -p " + Contrasena.get()  + " ssh " + Usuario.get()+"@"+IP.get()
 		print(cmd) 
 		os.system(cmd)
+		os.system("su root")
+		os.system("Bendicion77")
 		window2.destroy()
-	boton = Button(window2, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=lambda: loggearse())
+	boton = Button(window2, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=lambda : threading.Thread(target =  loggearse).start())
 	boton.place(relx = 0.5, rely = 0.8, anchor = 'center')
 
 #Funcion boton 1
@@ -100,7 +102,7 @@ def salir():
 window.protocol("WM_DELETE_WINDOW", salir)
 
 #Boton 0 
-btn0 = Button(window, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command=log_in)
+btn0 = Button(window, text="Log in", font=20, padx=10, pady=15, bg="white", fg="black", command= lambda : threading.Thread(target = log_in).start())
 btn0.place(x=380, y=130)
 
 #Definir botones
