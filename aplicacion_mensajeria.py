@@ -22,23 +22,42 @@ def send_welcome1(message):
 	variable=input("Esperando")
 	print("Texto1")
 	bot.reply_to(message, "Puede revisar")
-	
-	
+
+@bot.message_handler(commands=['registro'])
+def send_welcome2(message):
+	chat=message.chat.id
+	identificador=str(chat)
+	bot.reply_to(message, "En espera")
+	#print(chat)
+	registro=open("registro.txt", "w")
+	registro.write(identificador)
+	registro.close()
+	print("Registrado")
+	bot.reply_to(message, "Puede revisar")	
+
 def saludo():
 	#chat=message.chat.id
 	#bot.reply_to(message, "En espera")
 	print("Saludo")
+	registro=open("registro.txt","r")
+	identificador=registro.read()
+	registro.close()
+	#registro=str(registro)
+	#identificador=int(registro)
 	#bot.reply_to(message, "Puede revisar")
-	bot.send_message(1075158593, "Saludo")
+	bot.send_message(identificador, "Saludo")
 
 	
 def archivo():
 	#chat=message.chat.id
 	#bot.reply_to(message, "En espera")
+	registro=open("registro.txt","r")
+	identificador=registro.read()
+	registro.close()
 	print("Archivo:")
 	#bot.reply_to(message, "Puede revisar")
-	bot.send_message(1075158593, "Archivo:")
-	bot.send_document(1075158593, open('register.txt', 'rb') )
+	bot.send_message(identificador, "Archivo:")
+	bot.send_document(identificador, open('register.txt', 'rb') )
 	
 bot.polling()
 
