@@ -16,7 +16,7 @@ Así como la aplicación de mensajesaria para el bot telegram.
 Se necesitan seguir los siguientes pasos si se desea hacer uso de este repositorio:
 
 	1. Clonar poky-warrior: git clone -b warrior git://git.yoctoproject.org/poky.git
-	2. Clonar el repositorio de meta-raspberry dentro de la carpeta poky-warrior: git clole -b warrior git://git.yoctoproject.org/meta-raspberrypi
+	2. Clonar el repositorio de meta-raspberry dentro de la carpeta poky-warrior: git clone -b warrior git://git.yoctoproject.org/meta-raspberrypi
 	3. Clonar el master de este repositorio dentro de la carpeta poky-warrior y al mismo nivel de meta-raspberrypi: git clone https://github.com/kendallguido/Proyecto2_Embebidos.git
 	4. Abrir una terminal dentro de carpeta poky-warrior y ejecutar el siguiente comando: source oe-init-build-env pro3/
 	5. Correr el siguiente comando devtool add https://files.pythonhosted.org/packages/b5/94/46dcae8c061e28be31bcaa55c560cb30ee9403c9a4bb2659768ec1b9eb7d/imutils-0.5.3.tar.gz
