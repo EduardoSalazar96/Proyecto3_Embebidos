@@ -2,9 +2,8 @@ from tkinter import *
 import subprocess
 import threading
 import os
-#import paramiko
 
-#from aplicacion_mensajeria import saludo
+from aplicacion_mensajeria import saludo
 from aplicacion_mensajeria import archivo
 
 deteccion_comando ='python3 ejecucion.py'
