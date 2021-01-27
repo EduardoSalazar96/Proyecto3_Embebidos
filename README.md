@@ -1,5 +1,7 @@
 # Sistema de detección del distanciamiento social
 
+Este proyecto se pudo llevar a cabo gracias al siguiente repositorio: https://github.com/mk-gurucharan/Social-Distancing-Detector
+
 Este repositorio cuenta con dos directorios principales. Uno de ellos es el meta-distancia, el cual tiene adentro las
 receta del código fuente de detención del distanciamiento social, el archivo de ejecución, asi como los modelos de entrenamiento y pesos. Además cuenta con layer 
 de configuración de la receta.
